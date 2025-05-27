@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <!-- Welcome Message -->
+    <div id="welcomeBanner">Welcome to the Community Event Portal!
+        <span class="special-offer">Special Offer!</span>
+    </div>
+
+    <!-- Main -->
+    <main>
+        <section id="home">
+            <h2>Welcome to Our Local Community Event Portal</h2>
+            <p class="highlight">Discover and participate in amazing local events happening around you!</p>
+            <p>
+                Our vibrant community hosts a wide range of events throughout the year. Whether you're interested in music, art, technology, food, literature, or dance — we have something for everyone!
+            </p>
+           <ul>
+                <li><strong>💍 Wedding Celebrations:</strong> Experience beautifully organized local weddings with traditional and modern elements.</li>
+                <li><strong>💑 Ring Ceremonies:</strong> Attend joyful engagements where couples exchange rings in a festive atmosphere.</li>
+                <li><strong>🏢 Office Parties:</strong> Join corporate events that mix networking with entertainment in a relaxed setting.</li>
+                <li><strong>👨‍👩‍👧 Get-Together Parties:</strong> Reconnect with friends and family through fun-filled community gatherings.</li>
+                <li><strong>🎧 DJ Night Celebrations:</strong> Dance the night away with electrifying music and vibrant lighting.</li>
+                <li><strong>🕉️ Puja Occasions:</strong> Take part in spiritual and cultural pujas that bring the community together.</li>
+            </ul>
+
+            <p>
+                Be sure to check out the <a href="#events">Events</a> section below and register for the ones that excite you the most!
+            </p>
+        </section>
+
+
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <table>
+                <caption>Community Events Gallery</caption>
+                <tr>
+                    <td><img src="img/event1.png" alt="Event 1" title="Wedding" class="event-img"></td>
+                    <td><img src="img/event2.png" alt="Event 2" title="Ring Ceremony" class="event-img"></td>
+                    <td><img src="img/event3.png" alt="Event 3" title="Office Party" class="event-img"></td>
+                </tr>
+                <tr>
+                    <td><img src="img/event4.png" alt="Event 4" title="Get-Together" class="event-img"></td>
+                    <td><img src="img/event5.jpg" alt="Event 5" title="DJ Night" class="event-img"></td>
+                    <td><img src="img/event6.jpg" alt="Event 6" title="Puja" class="event-img"></td>
+                </tr>
+            </table>
+
+            <form id="registrationForm">
+                <h3>Register for an Event</h3>
+                <input type="text" name="name" placeholder="Your Name" required autofocus>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <label for="eventDate">Event Date:</label>
+                <input type="date" id="eventDate" name="date" required title="Select the event date" placeholder="YYYY-MM-DD">
+                <label for="eventType">Event Type:</label>
+                <select name="eventType" id="eventType" onchange="savePreference()">
+                    <option value="wedding">Wedding Celebrations</option>
+                    <option value="ring">Ring Ceremonies</option>
+                    <option value="office">Office Parties</option>
+                    <option value="get-together">Get-Together Parties</option>
+                    <option value="dj">DJ Night Celebrations</option>
+                    <option value="puja">Puja Occasions</option>
+                </select>
+                <textarea placeholder="Message"></textarea>
+                <input type="tel" id="phone" placeholder="Phone" onblur="validatePhone()">
+                <output id="confirmation"></output>
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" name="feedback" title="Enter your feedback" placeholder="Type your feedback here..." onkeydown="countChars()" required></textarea>
+                <p id="charCount">Characters: 0</p>
+                <button type="submit">Submit Feedback</button>
+                <p id="feedbackConfirmation" class="success-message"></p>
+            </form>
+        </section>
+
+
+        <section id="video">
+            <video src="img/video.mp4" controls oncanplay="videoReady()"></video>
+        </section>
+
+        <section id="geo">
+            <button onclick="findLocation()">Find Nearby Events</button>
+            <p id="location"></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Local Community Event Portal. All rights reserved.</p>
+            <nav class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact</a>
+            <a href="help.html">Help</a>
+            </nav>
+            <button class="clear-btn" onclick="clearPreferences()">Clear Preferences</button>
+        </div>
+    </footer>
+
+</body>
+</html>
